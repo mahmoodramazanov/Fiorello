@@ -17,6 +17,7 @@ header {
                 @include flex(space-between, center);
                 gap: 10px;
                 list-style: none;
+                font-family: 'Roboto', sans-serif;
                 i{
                     font-size: 24px;
                     // font-weight: 500;
@@ -24,7 +25,6 @@ header {
                 li{
                     font-size: 13px;
                     font-weight: 900px;
-                    font-family: 'Roboto', sans-serif;
                     a{
                         text-decoration: none;
                         color: black;
