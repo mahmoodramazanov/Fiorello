@@ -1,48 +1,61 @@
 header {
-    .sect-container {
-        max-width: 1300px;
-        margin: auto;
-      .sect-content {
-        background-color: silver;
-        @include flex(space-between, center);
-        height: 115px;
-        padding: 0 68px;
-        a {
-          img {
-            width: 212px;
-          }
+  .sect-container {
+    max-width: 1300px;
+    margin: auto;
+    .sect-content {
+      background-color: silver;
+      @include flex(space-between, center);
+      height: 115px;
+      padding: 0 68px;
+      a {
+        img {
+          width: 212px;
         }
-        nav{
-            ul{
-                @include flex(space-between, center);
-                gap: 10px;
-                list-style: none;
-                font-family: 'Roboto', sans-serif;
-                i{
-                    font-size: 24px;
-                    // font-weight: 500;
-                }
-                li{
-                    font-size: 13px;
-                    font-weight: 900px;
-                    a{
-                        text-decoration: none;
-                        color: black;
-                        margin: 0 25px;
-                    }
-                    button{
-                        border: none;
-                        background-color: transparent;
-                    }
-                    div{
-                        a{
-                            display: flex;
-                            gap: 20px;
-                        }
-                    }
-                }
+      }
+      nav {
+        ul {
+          @include flex(space-between, center);
+          gap: 10px;
+          list-style: none;
+          font-family: "Roboto", sans-serif;
+          i {
+            font-size: 24px;
+            // font-weight: 500;
+          }
+          .pages-group {
+            font-size: 13px;
+            font-weight: 900px;
+            position: relative;
+            .general-page {
+              text-decoration: none;
+              color: black;
+              margin: 0 25px;
             }
+            .icon-p-link {
+              @include flex(space-between, center);
+              gap: 20px;
+            }
+            button {
+              border: none;
+              background-color: transparent;
+            }
+
+            .dropdown {
+              background-color: blue;
+              display: none;
+              position: absolute;
+              top: 64px;
+            }
+            &:hover .dropdown {
+              display: flex;
+              ul {
+                gap: 40px;
+                flex-direction: column;
+              }
+            }
+          }
         }
       }
     }
   }
+}

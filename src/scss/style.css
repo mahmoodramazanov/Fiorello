@@ -70,25 +70,41 @@ header .sect-container .sect-content nav ul {
   align-items: center;
   gap: 10px;
   list-style: none;
+  font-family: "Roboto", sans-serif;
 }
 header .sect-container .sect-content nav ul i {
   font-size: 24px;
 }
-header .sect-container .sect-content nav ul li {
+header .sect-container .sect-content nav ul .pages-group {
   font-size: 13px;
   font-weight: 900px;
-  font-family: "Roboto", sans-serif;
+  position: relative;
 }
-header .sect-container .sect-content nav ul li a {
+header .sect-container .sect-content nav ul .pages-group .general-page {
   text-decoration: none;
   color: black;
   margin: 0 25px;
 }
-header .sect-container .sect-content nav ul li button {
+header .sect-container .sect-content nav ul .pages-group .icon-p-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+header .sect-container .sect-content nav ul .pages-group button {
   border: none;
   background-color: transparent;
 }
-header .sect-container .sect-content nav ul li div a {
+header .sect-container .sect-content nav ul .pages-group .dropdown {
+  background-color: blue;
+  display: none;
+  position: absolute;
+  top: 64px;
+}
+header .sect-container .sect-content nav ul .pages-group:hover .dropdown {
   display: flex;
-  gap: 20px;
+}
+header .sect-container .sect-content nav ul .pages-group:hover .dropdown ul {
+  gap: 40px;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
