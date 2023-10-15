@@ -2,9 +2,10 @@ header {
   .sect-container {
     max-width: 1300px;
     margin: auto;
-    .sect-content {
+    .row {
       background-color: silver;
       @include flex(space-between, center);
+      // flex-direction: row;
       height: 115px;
       padding: 0 68px;
       a {
@@ -30,6 +31,19 @@ header {
               text-decoration: none;
               color: black;
               margin: 0 25px;
+              &::after {
+                content: "";
+                position: absolute;
+                left: 25px;
+                top: 14px;
+                background-color: rgb(93, 93, 93);
+                height: 2px;
+                width: 0;
+                transition: 0.5s;
+              }
+              &:hover::after {
+                width: calc(100% - 50px);
+              }
             }
             .icon-p-link {
               @include flex(space-between, center);
@@ -46,13 +60,16 @@ header {
               position: absolute;
               top: 64px;
             }
+            
             &:hover .dropdown {
               display: flex;
+              text-align: center;
               ul {
                 gap: 40px;
                 flex-direction: column;
               }
             }
+            
           }
         }
       }

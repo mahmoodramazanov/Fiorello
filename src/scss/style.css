@@ -53,7 +53,7 @@ header .sect-container {
   max-width: 1300px;
   margin: auto;
 }
-header .sect-container .sect-content {
+header .sect-container .row {
   background-color: silver;
   display: flex;
   justify-content: space-between;
@@ -61,10 +61,10 @@ header .sect-container .sect-content {
   height: 115px;
   padding: 0 68px;
 }
-header .sect-container .sect-content a img {
+header .sect-container .row a img {
   width: 212px;
 }
-header .sect-container .sect-content nav ul {
+header .sect-container .row nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,39 +72,171 @@ header .sect-container .sect-content nav ul {
   list-style: none;
   font-family: "Roboto", sans-serif;
 }
-header .sect-container .sect-content nav ul i {
+header .sect-container .row nav ul i {
   font-size: 24px;
 }
-header .sect-container .sect-content nav ul .pages-group {
+header .sect-container .row nav ul .pages-group {
   font-size: 13px;
   font-weight: 900px;
   position: relative;
 }
-header .sect-container .sect-content nav ul .pages-group .general-page {
+header .sect-container .row nav ul .pages-group .general-page {
   text-decoration: none;
   color: black;
   margin: 0 25px;
 }
-header .sect-container .sect-content nav ul .pages-group .icon-p-link {
+header .sect-container .row nav ul .pages-group .general-page::after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 14px;
+  background-color: rgb(93, 93, 93);
+  height: 2px;
+  width: 0;
+  transition: 0.5s;
+}
+header .sect-container .row nav ul .pages-group .general-page:hover::after {
+  width: calc(100% - 50px);
+}
+header .sect-container .row nav ul .pages-group .icon-p-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
-header .sect-container .sect-content nav ul .pages-group button {
+header .sect-container .row nav ul .pages-group button {
   border: none;
   background-color: transparent;
 }
-header .sect-container .sect-content nav ul .pages-group .dropdown {
+header .sect-container .row nav ul .pages-group .dropdown {
   background-color: blue;
   display: none;
   position: absolute;
   top: 64px;
 }
-header .sect-container .sect-content nav ul .pages-group:hover .dropdown {
+header .sect-container .row nav ul .pages-group:hover .dropdown {
   display: flex;
+  text-align: center;
 }
-header .sect-container .sect-content nav ul .pages-group:hover .dropdown ul {
+header .sect-container .row nav ul .pages-group:hover .dropdown ul {
   gap: 40px;
   flex-direction: column;
+}
+
+@keyframes slide-scale {
+  0% {
+    transform: scale(1.11);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1.11);
+  }
+}
+main #slider-sect {
+  background-image: url("../../assests/images/slider_bg_kaktus.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+main #slider-sect .sect-container .row .carousel {
+  width: 100%;
+}
+main #slider-sect .sect-container .row .carousel .carousel-inner {
+  width: 100%;
+  position: relative;
+  height: 440px;
+}
+main #slider-sect .sect-container .row .carousel .carousel-inner .text {
+  width: 400px;
+  z-index: 300;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main #slider-sect .sect-container .row .carousel .carousel-inner .text h3 {
+  font-size: 46px;
+}
+main #slider-sect .sect-container .row .carousel .carousel-inner .text h3 span {
+  color: red;
+}
+main #slider-sect .sect-container .row .carousel .carousel-inner .text p {
+  line-height: 1.5;
+}
+main #slider-sect .sect-container .row .carousel .carousel-inner .text img {
+  width: 200px;
+}
+main #slider-sect .sect-container .row .carousel .carousel-inner .carousel-item img {
+  width: 100%;
+  transform: scale(1.11);
+  transform-origin: top;
+  animation: slide-scale 10s infinite;
+}
+main #slider-sect .sect-container .row .carousel button {
+  font-size: 40px;
+  width: 80px;
+}
+main #slider-sect .sect-container .row .carousel button i {
+  color: rgb(80, 80, 80);
+}
+main #flowers-shop .sect-container {
+  max-width: 1300px;
+  margin: auto;
+}
+main #flowers-shop .sect-container .row {
+  padding: 0 68px;
+}
+main #flowers-shop .sect-container .row .filteration {
+  padding: 68px 10px 10px 10px;
+  font-family: "Roboto", sans-serif;
+}
+main #flowers-shop .sect-container .row .filteration .left-filter .filter-by-type button {
+  margin: 10px;
+  border: none;
+  background-color: transparent;
+  color: rgb(69, 69, 69);
+  font-size: 14px;
+}
+main #flowers-shop .sect-container .row .filteration .left-filter .filter-by-type button:hover {
+  color: rgb(222, 112, 2);
+}
+main #flowers-shop .sect-container .row .flowers-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+main #flowers-shop .sect-container .row .flowers-cards-wrapper .card {
+  border: none;
+  padding: 16px;
+}
+main #flowers-shop .sect-container .row .flowers-cards-wrapper .card .card-inner .card-img img {
+  width: 100%;
+  transition: 0.5s;
+}
+main #flowers-shop .sect-container .row .flowers-cards-wrapper .card .card-inner .card-text {
+  text-align: center;
+  overflow: hidden;
+}
+main #flowers-shop .sect-container .row .flowers-cards-wrapper .card .card-inner .card-text h4 {
+  margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+}
+main #flowers-shop .sect-container .row .flowers-cards-wrapper .card .card-inner .card-text .bottom-text {
+  display: flex;
+  width: 200%;
+  margin-top: 10px;
+}
+main #flowers-shop .sect-container .row .flowers-cards-wrapper .card .card-inner .card-text .bottom-text p {
+  width: 50%;
+  transition: 0.5s;
+  transform: translateX(-100%);
+}
+main #flowers-shop .sect-container .row .flowers-cards-wrapper .card .card-inner:hover .card-img img {
+  transform: scale(1.05);
+}
+main #flowers-shop .sect-container .row .flowers-cards-wrapper .card .card-inner:hover .card-text .bottom-text p {
+  transform: translateX(0%);
 }/*# sourceMappingURL=style.css.map */

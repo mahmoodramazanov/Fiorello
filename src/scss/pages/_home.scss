@@ -1,1 +1,144 @@
+@keyframes slide-scale {
+  0% {
+    transform: scale(1.11);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1.11);
+  }
+}
 
+main {
+  #slider-sect {
+    background-image: url("../../assests/images/slider_bg_kaktus.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    .sect-container {
+      .row {
+        .carousel {
+          width: 100%;
+          .carousel-inner {
+            width: 100%;
+            position: relative;
+            height: 440px;
+            .text {
+              width: 400px;
+              z-index: 300;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 60px;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              h3 {
+                font-size: 46px;
+                span {
+                  color: red;
+                }
+              }
+              p {
+                line-height: 1.5;
+              }
+              img {
+                width: 200px;
+              }
+            }
+            .carousel-item {
+              img {
+                width: 100%;
+                transform: scale(1.11);
+                transform-origin: top;
+                animation: slide-scale 10s infinite;
+
+                // animation: 5s infinite;
+              }
+            }
+          }
+          button {
+            font-size: 40px;
+            width: 80px;
+            // left: 0;
+            i {
+              color: rgb(80, 80, 80);
+            }
+          }
+        }
+      }
+    }
+  }
+  #flowers-shop {
+    .sect-container {
+      max-width: 1300px;
+      margin: auto;
+      .row {
+        padding: 0 68px;
+        .filteration {
+          padding: 68px 10px 10px 10px;
+          font-family: "Roboto", sans-serif;
+          .left-filter {
+            .filter-by-type {
+              button {
+                margin: 10px;
+                border: none;
+                background-color: transparent;
+                color: rgb(69, 69, 69);
+                font-size: 14px;
+                &:hover{
+                    color: rgb(222, 112, 2);
+                }
+              }
+            }
+          }
+        }
+        .flowers-cards-wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          .card {
+            border: none;
+            padding: 16px;
+            // background-color: red;
+
+            .card-inner {
+              .card-img {
+                img {
+                  width: 100%;
+                  transition: 0.5s;
+                }
+              }
+              .card-text {
+                // width: 100%;
+                text-align: center;
+                overflow: hidden;
+                h4 {
+                  margin-top: 10px;
+                  font-family: "Roboto", sans-serif;
+                }
+                .bottom-text {
+                  display: flex;
+                  width: 200%;
+                  margin-top: 10px;
+                  p {
+                    width: 50%;
+                    transition: 0.5s;
+                    transform: translateX(-100%);
+                  }
+                }
+              }
+              &:hover {
+                .card-img img {
+                  transform: scale(1.05);
+                }
+                .card-text .bottom-text p {
+                  transform: translateX(0%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
